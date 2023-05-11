@@ -1,5 +1,5 @@
-import {ID} from "@/models/ID";
-import {Timestamps} from "@/models/Timestamps";
+import {ID} from "@/contracts/ID";
+import {Timestamps} from "@/contracts/Timestamps";
 import {Book} from "@/models/Book";
 
 export interface Author extends Timestamps {

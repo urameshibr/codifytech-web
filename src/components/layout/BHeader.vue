@@ -61,13 +61,7 @@
           </v-card>
         </v-menu>
 
-        <v-btn
-            v-for="link in links"
-            :key="link"
-            text
-        >
-          {{ link }}
-        </v-btn>
+        <v-spacer></v-spacer>
 
         <v-responsive>
           <v-text-field
@@ -80,12 +74,6 @@
         </v-responsive>
 
         <v-spacer></v-spacer>
-        <v-btn
-            rounded
-            color="success"
-        >
-          <span>Adicionar livro</span>
-        </v-btn>
       </v-container>
     </v-app-bar>
   </div>
@@ -100,10 +88,6 @@ export default {
       name: 'Lucas Rodrigues'
     },
     showMenu: false,
-    links: [
-      'Livros',
-      'Autores',
-    ],
   }),
 }
 </script>

@@ -1,4 +1,4 @@
-import {ID} from "@/models/ID";
+import {ID} from "@/contracts/ID";
 import {Author} from "@/models/Author";
 
 export interface Book {
