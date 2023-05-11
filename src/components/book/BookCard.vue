@@ -1,16 +1,42 @@
 <template>
   <div>
     <v-card
-        class="mx-auto"
+        class="mx-auto book-card"
     >
+      <span class="book-card__actions">
+        <v-btn
+            fab
+            color="warning"
+            dark
+            small
+            @click="editBook(book.id)"
+        >
+          <v-icon>mdi-pencil</v-icon>
+        </v-btn>
+      </span>
+
       <v-img
           src="@/assets/book.png"
           eager
-      ></v-img>
+      />
 
       <v-card-title>
         <h6>{{ $props.book.title }}</h6>
       </v-card-title>
+
+      <v-card-subtitle>
+        <p>
+          Autores:
+          <span
+              v-for="author in $props.book.authors"
+              class="d-flex align-center"
+          >
+
+            {{ author.name }}
+            </span>
+        </p>
+
+      </v-card-subtitle>
 
       <v-card-actions>
         <v-btn
@@ -72,5 +98,24 @@ export default defineComponent({
   data: () => ({
     show: false,
   }),
+
+  methods: {
+    editBook(book_id: string|number) {
+      this.$emit('edit-book', book_id);
+    }
+  },
 })
 </script>
+
+<style lang="scss">
+.book-card {
+  position: relative;
+
+  &__actions {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1;
+  }
+}
+</style>

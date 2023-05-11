@@ -1,5 +1,6 @@
 <template>
   <v-app id="inspire">
+
     <b-header/>
 
     <v-main class="grey lighten-3">
